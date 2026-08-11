@@ -8,7 +8,7 @@ class Contact{
 }
 
 void main() {
-  List<Contact> diary = [];
+  List<Contact>diary = [];
   bool running = true;
 
   while (running) {
