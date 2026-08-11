@@ -22,9 +22,22 @@ void main() {
 
     String? opcion = stdin.readLineSync();
 
-    switch (opcion) {
+   switch (opcion) {
       case '1':
-        // TODO: Aprendiz 1 - Implementar lógica para agregar
+        // Lógica del Aprendiz 1: Agregar contacto
+        print('\n--- Agregar Nuevo Contacto ---');
+        stdout.write('Ingrese el nombre: ');
+        String? nombre = stdin.readLineSync();
+
+        stdout.write('Ingrese el teléfono: ');
+        String? telefono = stdin.readLineSync();
+
+        if (nombre != null && nombre.isNotEmpty && telefono != null && telefono.isNotEmpty) {
+          diary.add(Contact(nombre, telefono));
+          print('¡Contacto agregado exitosamente!');
+        } else {
+          print('Error: El nombre y el teléfono no pueden estar vacíos.');
+        }
         break;
       case '2':
         // TODO: Aprendiz 2 - Implementar lógica para listar
