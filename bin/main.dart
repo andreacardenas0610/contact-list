@@ -42,11 +42,11 @@ void main() {
       case '2':
       // Lógica para Aprendiz 2: Listar contactos
       print('\n--- LISTA DE CONTACTOS ---');
-      if (contactos.isEmpty) { // O la variable que maneje la lista de contactos
+      if (diary.isEmpty) {
         print('No hay contactos registrados.');
       } else {
-        for (var i = 0; i < contactos.length; i++) {
-          print('${i + 1}. ${contactos[i]}');
+        for (var i = 0; i < diary.length; i++) {
+          print('${i + 1}. Nombre: ${diary[i].name} - Teléfono: ${diary[i].phone}');
         }
       }
       break;
