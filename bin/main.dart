@@ -22,7 +22,7 @@ void main() {
 
     String? opcion = stdin.readLineSync();
 
-    switch (opcion) {
+   switch (opcion) {
       case '1':
         // Lógica del Aprendiz 1: Agregar contacto
         print('\n--- Agregar Nuevo Contacto ---');
