@@ -52,10 +52,58 @@ void main() {
       break;
       case '3':
         // TODO: Aprendiz 3 - Implementar lógica para buscar
+        print('\n--- Buscar Contacto ---');
+        stdout.write('Ingrese el nombre del contacto a buscar: ');
+        String? searchName = stdin.readLineSync();
+
+        stdout.write('Ingrese el teléfono del contacto a buscar: ');
+        String? searchPhone = stdin.readLineSync();
+
+        if (searchName != null && searchName.isNotEmpty && searchPhone != null && searchPhone.isNotEmpty) {
+          bool found = false;
+
+          for (var contact in diary) {
+            if (contact.name.toLowerCase() == searchName.toLowerCase() && contact.phone == searchPhone) {
+              print('\nContacto encontrado: ${contact.name} \nTeléfono: ${contact.phone}');
+              found = true;
+              break; 
+            }
+          }
+
+          if (!found) {
+            print('\nContacto no encontrado.');
+          }
+        } else {
+          print('Error: El nombre y el teléfono no pueden estar vacíos.');
+        }
         break;
+        
       case '4':
         // TODO: Aprendiz 3 - Implementar lógica para eliminar
+        print('\n--- Eliminar Contacto ---');
+        stdout.write('Ingrese el nombre del contacto a eliminar: ');
+        String? deleteName = stdin.readLineSync();
+
+        stdout.write('Ingrese el teléfono del contacto a eliminar: ');
+        String? deletePhone = stdin.readLineSync();
+
+        if (deleteName != null && deleteName.isNotEmpty && deletePhone != null && deletePhone.isNotEmpty) {
+          int originalLength = diary.length;
+
+          diary.removeWhere((contact) => 
+            contact.name.toLowerCase() == deleteName.toLowerCase() && contact.phone == deletePhone
+          );
+
+          if (diary.length < originalLength) {
+            print('¡Contacto eliminado exitosamente!');
+          } else {
+            print('No se encontró ningún contacto con esos datos para eliminar.');
+          }
+        } else {
+          print('Error: El nombre y el teléfono no pueden estar vacíos.');
+        }
         break;
+
       case '5':
         print('Saliendo de la agenda...');
         running = false;
