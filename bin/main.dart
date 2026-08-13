@@ -39,7 +39,7 @@ void main() {
           print('Error: El nombre y el teléfono no pueden estar vacíos.');
         }
         break;
-       case '2':
+      case '2':
       // Lógica para Aprendiz 2: Listar contactos
       print('\n--- LISTA DE CONTACTOS ---');
       if (diary.isEmpty) {
