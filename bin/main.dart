@@ -40,8 +40,16 @@ void main() {
         }
         break;
       case '2':
-        // TODO: Aprendiz 2 - Implementar lógica para listar
-        break;
+      // Lógica para Aprendiz 2: Listar contactos
+      print('\n--- LISTA DE CONTACTOS ---');
+      if (diary.isEmpty) {
+        print('No hay contactos registrados.');
+      } else {
+        for (var i = 0; i < diary.length; i++) {
+          print('${i + 1}. Nombre: ${diary[i].name} - Teléfono: ${diary[i].phone}');
+        }
+      }
+      break;
       case '3':
         // TODO: Aprendiz 3 - Implementar lógica para buscar
         break;
